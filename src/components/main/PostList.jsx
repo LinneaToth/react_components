@@ -1,19 +1,14 @@
-import { useState, useEffect } from "react";
-import Posts from "./Posts";
-import Users from "./Users";
+import Post from "./Post";
+import { postsData } from "../../assets/data/data";
 
-export default function PostList({ postsData }) {
-  const [activeUser, setActiveUser] = useState(null);
-  const users = [...new Set(postsData.map((p) => p.author))]; //using set to reduce the array to unique users
-
-  function toggleActiveUser(user) {
-    setActiveUser(user);
-  }
-
+export default function Posts({ user, activeTag = null }) {
   return (
-    <section className="flex w-3/4 flex-row">
-      <Users users={users} toggleActiveUser={toggleActiveUser} />
-      <Posts user={activeUser} />
+    <section className="scrollbar-hidden h-[600px] w-2/3 overflow-scroll">
+      {activeTag &&
+        postsData
+          .filter((p) => p.tags.includes(activeTag))
+          .map((p) => <Post key={p.id} post={p} />)}
+      {!activeTag && postsData.map((p) => <Post key={p.id} post={p} />)}
     </section>
   );
 }

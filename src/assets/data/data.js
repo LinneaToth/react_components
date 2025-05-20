@@ -43,7 +43,7 @@ const postsData = [
         heading: "Chrome Sunsets",
         text: "Purple sunsets, chrome reflections, and a soundtrack that never stops.",
         author: "PixelPilot",
-        tags: ["Neon", "RetroRide"],
+        tags: ["Neon"],
     },
     {
         id: uuidv4(),
@@ -64,7 +64,7 @@ const postsData = [
         heading: "Neon Resistance",
         text: "They told us the future would be cold metal and corporate towers. We made it neon and alive.",
         author: "NeonNomad",
-        tags: ["SynthRebellion", "FutureIsNow", "NeonResistance"],
+        tags: ["NeonResistance"],
     },
     {
         id: uuidv4(),
@@ -77,7 +77,7 @@ const postsData = [
         heading: "Laser Dreams",
         text: "Under radiant laser skies, every dream shines like a beacon in the digital cosmos.",
         author: "LaserLuxe",
-        tags: ["Laser", "DigitalDream", "Neon"],
+        tags: ["Laser", "Neon"],
         id: uuidv4(),
     },
     {
@@ -98,7 +98,7 @@ const postsData = [
         heading: "Electric Eclipse",
         text: "A sudden surge of electric rhythm eclipses the mundane, electrifying your world.",
         author: "NeonOracle",
-        tags: ["Electric", "Rhythm", "NeonEclipse"],
+        tags: ["Electric", "Rhythm"],
         id: uuidv4(),
     },
     {
@@ -119,7 +119,7 @@ const postsData = [
         heading: "Binary Bliss",
         text: "In the binary code of existence, bliss is found in every flicker of light.",
         author: "CodeCrescendo",
-        tags: ["Binary"],
+        tags: ["Data"],
         id: uuidv4(),
     },
     {
@@ -140,7 +140,7 @@ const postsData = [
         heading: "Echoes of Neon",
         text: "Every shadow in the neon-lit street echoes stories of previous lives and digital lore.",
         author: "NeonOracle",
-        tags: ["Neon", "DigitalLore"],
+        tags: ["Neon"],
         id: uuidv4(),
     },
     {
@@ -154,14 +154,14 @@ const postsData = [
         heading: "Digital Dusk",
         text: "At digital dusk, the sky is a canvas painted with electric memories.",
         author: "DuskDreamer",
-        tags: ["Digital", "Dusk", "Memories"],
+        tags: ["Digital"],
         id: uuidv4(),
     },
     {
         heading: "Pixelated Paradise",
         text: "Welcome to a pixelated paradise where every dot tells a story of beauty and rebellion.",
         author: "PixelPioneer",
-        tags: ["Urban", "Pulse", "Nightlife", "Rebel"],
+        tags: ["Urban", "Pulse"],
         id: uuidv4(),
     },
     {
@@ -196,7 +196,7 @@ const postsData = [
         heading: "Future Frequency",
         text: "Tune in to the future frequency where every beat is a transmission from tomorrow.",
         author: "FrequencyFader",
-        tags: ["Future", "Frequency", "Beat"],
+        tags: ["Future", "Frequency"],
         id: uuidv4(),
     },
     {
