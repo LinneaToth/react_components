@@ -1,13 +1,21 @@
-export default function Users() {
+import { v4 as uuidv4 } from "uuid";
+
+export default function Users({ users, toggleActiveUser }) {
   return (
-    <section className="border-accent border-4 w-1/2">
+    <section className="border-accent w-1/4 border-4">
       <ul>
-        <li>USER 1</li>
-        <li>USER 1</li>
-        <li>USER 1</li>
-        <li>USER 1</li>
-        <li>USER 1</li>
-        <li>USER 1</li>
+        {users.map((u) => {
+          return (
+            <li
+              key={uuidv4()}
+              onClick={() => {
+                toggleActiveUser(u);
+              }}
+            >
+              {u}
+            </li>
+          );
+        })}
       </ul>
     </section>
   );

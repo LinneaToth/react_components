@@ -1,13 +1,17 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import Navbar from "./components/navbar/Navbar.jsx";
 import Sidebar from "./components/sidebar/Sidebar.jsx";
 import MainContent from "./components/main/MainContent.jsx";
+import { postsData } from "./assets/data/data.js";
+import PostsContext from "./contexts/PostsContext.js";
+import NavContext from "./contexts/NavContext.js";
 
 function App() {
+  const [active, setActive] = useState({ user: null, tags: null });
   const [sidebarShow, setSidebarShow] = useState(false);
 
   const [isSmall, setIsSmall] = useState(
-    window.innerWidth < 640 ? true : false
+    window.innerWidth < 640 ? true : false,
   );
 
   window.addEventListener("resize", () => {
@@ -15,17 +19,21 @@ function App() {
   });
 
   return (
-    <div
-      className="bg-(--color-main-bg) text-(--color-text-main)
-    w-screen h-screen sm:min-h-[600px] absolute 
-    grid grid-cols-2 sm:grid-cols-3 grid-rows-10 lg:grid-cols-5 xl:grid-cols-6">
-      <Navbar
-        isSmall={isSmall}
-        sidebarShow={sidebarShow}
-        setSidebarShow={setSidebarShow}
-      />
-      <Sidebar isSmall={isSmall} sidebarShow={sidebarShow} />
-      <MainContent />
+    <div className="absolute grid h-screen w-screen grid-cols-2 grid-rows-10 bg-(--color-main-bg) text-(--color-text-main) sm:min-h-[600px] sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
+      <NavContext.Provider
+        value={{
+          isSmall: isSmall,
+          sidebarShow: sidebarShow,
+          setSidebarShow: setSidebarShow,
+        }}
+      >
+        <Navbar />
+
+        <PostsContext.Provider value={{ active: active, setActive: setActive }}>
+          <Sidebar />
+          <MainContent postsData={postsData} />
+        </PostsContext.Provider>
+      </NavContext.Provider>
     </div>
   );
 }

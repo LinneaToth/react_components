@@ -6,6 +6,7 @@
   --color-main-bg: #22223D;
   --color-secondary-bg: #1B1B31;
   --color-accent: #EE2D87;
+  --color-secondary-accent: #FA6941;
   --color-text-main: #FFFFFF;
   --gap: 1rem;
   --font-size-h1: 2rem;
@@ -14,6 +15,11 @@
   --font-size-h4: 1rem;
 }
 
+@utility scrollbar-hidden {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
 
 @layer base {
   body {

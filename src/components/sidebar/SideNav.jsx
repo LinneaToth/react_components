@@ -1,7 +1,13 @@
 //Component responsible for the navigation part of the sidebar
-
 import { useState } from "react";
+import { v4 as uuidv4 } from "uuid";
 import SideButton from "./SideButton.jsx";
+
+const sideButtons = [
+  { name: "Uppgift 1", id: uuidv4() },
+  { name: "Uppgift 2", id: uuidv4() },
+  { name: "Uppgift 3", id: uuidv4() },
+];
 
 export default function SideNav() {
   //Keeps track of the active buttons
@@ -13,23 +19,19 @@ export default function SideNav() {
   }
 
   return (
-    <ul className="sm:row-start-5 flex flex-col gap-2 h-50">
+    <ul className="flex h-50 flex-col gap-2 sm:row-start-5">
       {/* Buttons! Next time around this will be mapped, and each will get a Key */}
-      <SideButton
-        name="part 1"
-        isActive={activeButton === "part 1" ? true : false}
-        onClick={activeHandler}
-      />
-      <SideButton
-        name="part 2"
-        isActive={activeButton === "part 2" ? true : false}
-        onClick={activeHandler}
-      />
-      <SideButton
-        name="part 3"
-        isActive={activeButton === "part 3" ? true : false}
-        onClick={activeHandler}
-      />
+
+      {sideButtons.map((btn) => {
+        return (
+          <SideButton
+            key={btn.id}
+            name={btn.name}
+            isActive={activeButton === btn.name ? true : false}
+            onClick={activeHandler}
+          />
+        );
+      })}
     </ul>
   );
 }

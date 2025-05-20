@@ -1,8 +1,9 @@
 //Compontent responsible for the nav bar on top of the page
+import { useState, useEffect, useContext } from "react";
 
 import NavLink from "./NavLink.jsx";
 import Hamburger from "./Hamburger.jsx";
-import { useState, useEffect } from "react";
+import NavContext from "../../contexts/NavContext.js";
 
 //Separates the data from the logic
 const links = [
@@ -11,19 +12,16 @@ const links = [
   { text: "contact us", url: "" },
   { text: "our history", url: "" },
 ];
-
 //takes states as props
-export default function Navbar({
-  isSmall = false,
-  sidebarShow,
-  setSidebarShow,
-}) {
+export default function Navbar() {
+  const { isSmall } = useContext(NavContext);
+
   //Keeping track of which button is active
   const [activeButton, setActiveButton] = useState("home");
   //Visibility of navbar
   const [navbarShow, setNavbarShow] = useState(false);
   const [isVisible, setVisible] = useState(
-    isSmall && !navbarShow ? false : true
+    isSmall && !navbarShow ? false : true,
   );
 
   //Effect reacts to changes to window size and if the navbar should be shown
@@ -49,15 +47,17 @@ export default function Navbar({
 
   return (
     <nav
-      className={`col-start-1 col-span-2 bg-(--color-secondary-bg) h-[3rem] mt-[1rem] shadow-(<custom-property>) sm:col-start-2 sm:col-span-5 lg:pl-[5rem]`}>
+      className={`shadow-(<custom-property>) col-span-2 col-start-1 mt-[1rem] h-[3rem] bg-(--color-secondary-bg) sm:col-span-5 sm:col-start-2 lg:pl-[5rem]`}
+    >
       <ul
-        className={`md:ml-[50px] mr-2 gap-8 justify-start items-center text-(length:--font-size-h3) ${
-          !isVisible ? "hidden" : "flex flex-col sm:flex-row justify-between"
+        className={`mr-2 items-center justify-start gap-8 text-(length:--font-size-h3) md:ml-[50px] ${
+          !isVisible ? "hidden" : "flex flex-col justify-between sm:flex-row"
         } ${
           isSmall && isVisible
-            ? "absolute ml-[10%] w-[80%] h-[80vh] mt-[10vh] rounded-4xl z-10 text-center bg-(--color-secondary-bg) pt-[10%] "
+            ? "absolute z-10 mt-[10vh] ml-[10%] h-[80vh] w-[80%] rounded-4xl bg-(--color-secondary-bg) pt-[10%] text-center"
             : ""
-        }`}>
+        }`}
+      >
         {/* Mapping over the array of links, creating a NavLink for each. Data as props, as well as states and clickhandling function */}
         {links.map((link) => {
           return (
@@ -67,20 +67,13 @@ export default function Navbar({
               key={link.text}
               active={activeButton === link.text}
               onMouseDown={activeHandler}
-              isSmall={isSmall}
             />
           );
         })}
       </ul>
       {/* Collapsed menu icons are added if the window is small. States as props. */}
       {isSmall && (
-        <Hamburger
-          sidebarShow={sidebarShow}
-          setSidebarShow={setSidebarShow}
-          navbarShow={navbarShow}
-          setNavbarShow={setNavbarShow}
-          isSmall={isSmall}
-        />
+        <Hamburger navbarShow={navbarShow} setNavbarShow={setNavbarShow} />
       )}
     </nav>
   );

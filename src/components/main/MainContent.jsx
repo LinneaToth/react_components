@@ -1,14 +1,29 @@
+import { useState, useEffect } from "react";
 import Header from "./Header";
-import PostList from "./PostList";
 import TagList from "./TagList";
-import Users from "./Users";
+import PostList from "./PostList";
 
-export default function MainContent() {
+export default function MainContent({ postsData }) {
+  const [displayedTags, setDisplayedTags] = useState([]);
+
+  const tags = [
+    ...new Set(
+      postsData
+        .map((p) => p.tags)
+        .flat()
+        .sort(),
+    ),
+  ];
+
   return (
-    <main className="h-full w-full col-span-full sm:col-start-2 sm:col-span-2 md:col-span-4 lg:col-span-5 flex flex-row flex-wrap border-t-[1px]">
+    <main className="col-span-full flex h-full w-full flex-row flex-wrap justify-between border-t-[1px] pl-10 sm:col-span-2 sm:col-start-2 md:col-span-4 lg:col-span-5">
       <Header />
-      <PostList />
-      <TagList />
+      <PostList postsData={postsData} />
+      <TagList
+        tags={tags}
+        displayedTags={displayedTags}
+        setDisplayedTags={setDisplayedTags}
+      />
     </main>
   );
 }
