@@ -1,20 +1,33 @@
-export default function TagList({ tags, setActiveTag }) {
+import { v4 as uuidv4 } from "uuid";
+
+export default function TagList({ tags, setActiveTag, activeTag }) {
   const countObject = {};
   tags.forEach((tag) => {
     countObject[tag] = (countObject[tag] || 0) + 1;
   });
 
   const uniqueTags = [...new Set(tags)];
+  console.log(activeTag);
 
-  console.log(countObject);
   return (
     <aside className="mr-10 w-1/5">
+      <button
+        onClick={() => setActiveTag(null)}
+        className="mr-2 mb-2 rounded bg-(--color-tertiary-accent) p-1 text-center text-xs"
+      >
+        All
+        <span className="ml-1 align-super font-bold text-(--color-main-bg)">
+          {tags.length}
+        </span>
+      </button>
       {uniqueTags.map((tag) => (
         <button
-          className="bg-accent m-2 rounded p-1 text-xs hover:bg-(--color-secondary-accent)"
+          key={uuidv4()}
+          className={`${activeTag !== tag ? "bg-accent" : "bg-(--color-secondary-accent)"} mr-2 mb-2 rounded p-1 text-xs hover:bg-(--color-secondary-accent)`}
           onClick={() => {
             console.log("As per assignment instructions: Button clicked!");
             setActiveTag(tag);
+            console.log("tag:", tag, "active Tag:", activeTag);
           }}
         >
           {tag}{" "}

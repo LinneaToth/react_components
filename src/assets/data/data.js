@@ -22,7 +22,7 @@ const postsData = [
         heading: "Digital Reverie",
         text: "Drifting through cyberspace, searching for lost memories in the glow of a CRT screen.",
         aauthor: "DataDrifter",
-        tags: ["RetroFuturism", "TechnoMystic", "DigitalLost"],
+        tags: ["RetroFuturism"],
     },
     {
         id: uuidv4(),
@@ -64,7 +64,7 @@ const postsData = [
         heading: "Neon Resistance",
         text: "They told us the future would be cold metal and corporate towers. We made it neon and alive.",
         author: "NeonNomad",
-        tags: ["NeonResistance"],
+        tags: ["Neon"],
     },
     {
         id: uuidv4(),

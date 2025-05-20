@@ -5,6 +5,7 @@ import MainContent from "./components/main/MainContent.jsx";
 import { postsData } from "./assets/data/data.js";
 import PostsContext from "./contexts/PostsContext.js";
 import NavContext from "./contexts/NavContext.js";
+import Footer from "./components/footer/Footer.jsx";
 
 function App() {
   const [active, setActive] = useState({ user: null, tags: null });
