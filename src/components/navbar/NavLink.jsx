@@ -18,7 +18,7 @@ export default function NavLink({
         "h-12 w-25 justify-self-center rounded pt-3 text-center transition-all duration-50 ease-in-out active:scale-105" +
         " " +
         (active ? "bg-(--color-accent)" + " " : "") +
-        (isSmall ? "h-20 w-85 pt-8 pb-17 text-3xl" + " " : "")
+        (isSmall ? "h-20 w-60 pt-8 pb-17 text-3xl" + " " : "")
       }
     >
       <a
