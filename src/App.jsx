@@ -20,7 +20,7 @@ function App() {
   });
 
   return (
-    <div className="absolute grid h-screen w-screen grid-cols-2 grid-rows-10 bg-(--color-main-bg) text-(--color-text-main) sm:min-h-[600px] sm:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6">
+    <div className="absolute grid h-screen w-screen grid-cols-2 overflow-hidden bg-(--color-main-bg) text-(--color-text-main) sm:min-h-[600px] sm:grid-cols-3 sm:grid-rows-10 lg:grid-cols-5 xl:grid-cols-6">
       <NavContext.Provider
         value={{
           isSmall: isSmall,
@@ -29,9 +29,8 @@ function App() {
         }}
       >
         <Navbar />
-
+        <Sidebar />
         <PostsContext.Provider value={{ active: active, setActive: setActive }}>
-          <Sidebar />
           <MainContent postsData={postsData} />
         </PostsContext.Provider>
       </NavContext.Provider>

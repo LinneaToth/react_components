@@ -10,7 +10,7 @@ export default function TagList({ tags, setActiveTag, activeTag }) {
   console.log(activeTag);
 
   return (
-    <aside className="mr-10 w-1/5">
+    <aside className="mr-10 mb-10 w-full lg:order-3 lg:w-1/5">
       <button
         onClick={() => setActiveTag(null)}
         className="mr-2 mb-2 rounded bg-(--color-tertiary-accent) p-1 text-center text-xs"
@@ -31,7 +31,7 @@ export default function TagList({ tags, setActiveTag, activeTag }) {
           }}
         >
           {tag}{" "}
-          <span className="align-super font-bold text-(--color-main-bg)">
+          <span className="order-first align-super font-bold text-(--color-main-bg) sm:order-last">
             {countObject[tag]}
           </span>
         </button>

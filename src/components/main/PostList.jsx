@@ -3,7 +3,7 @@ import { postsData } from "../../assets/data/data";
 
 export default function Posts({ user, activeTag = null }) {
   return (
-    <section className="scrollbar-hidden h-[600px] w-full overflow-scroll lg:w-2/3">
+    <section className="scrollbar-hidden order-last h-[80%] w-full overflow-scroll md:order-2 lg:w-2/3">
       {activeTag &&
         postsData
           .filter((p) => p.tags.includes(activeTag))

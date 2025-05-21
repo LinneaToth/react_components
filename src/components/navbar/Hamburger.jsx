@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import NavContext from "../../contexts/NavContext";
+import burgerIcon from "../../../src/assets/icons/hamburger.svg";
+import extraIcon from "../../../src/assets/icons/extramenu.svg";
 
 //Takes states about shown sidebar and navbar as props
 export default function Hamburger({ setNavbarShow, navbarShow }) {
@@ -22,12 +24,12 @@ export default function Hamburger({ setNavbarShow, navbarShow }) {
     <div className="ml-[75vw] flex flex-row">
       <img
         className="h-[40px] w-[40px] self-center pr-(--gap)"
-        src="../../src/assets/icons/hamburger.svg"
+        src={burgerIcon}
         onMouseDown={clickHandlerNavbar}
       ></img>
       <img
         className="h-[40px] w-[40px] self-center pr-(--gap)"
-        src="../../src/assets/icons/extramenu.svg"
+        src={extraIcon}
         onMouseDown={clickHandlerSide}
       ></img>
     </div>

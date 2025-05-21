@@ -10,7 +10,6 @@ const links = [
   { text: "home", url: "" },
   { text: "about", url: "" },
   { text: "contact us", url: "" },
-  { text: "our history", url: "" },
 ];
 //takes states as props
 export default function Navbar() {
