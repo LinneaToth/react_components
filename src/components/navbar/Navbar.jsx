@@ -53,7 +53,7 @@ export default function Navbar() {
           !isVisible ? "hidden" : "flex flex-col justify-between sm:flex-row"
         } ${
           isSmall && isVisible
-            ? "absolute z-10 mt-[10vh] ml-[10%] h-[80vh] w-[80%] rounded-4xl bg-(--color-secondary-bg) pt-[10%] text-center"
+            ? "absolute z-10 mt-[10vh] ml-[10%] h-[60vh] w-[80%] rounded-4xl bg-(--color-secondary-bg) pt-[10%] text-center"
             : ""
         }`}
       >

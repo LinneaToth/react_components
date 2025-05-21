@@ -9,9 +9,7 @@ export default function Sidebar() {
   const { isSmall, sidebarShow, setSidebarShow } = useContext(NavContext);
 
   //Visible or not?
-  const [isVisible, setVisible] = useState(
-    isSmall && !sidebarShow ? false : true,
-  );
+  const [isVisible, setVisible] = useState(false);
 
   //Listens to changes to window size or if the sidebar should be shown or not
   useEffect(() => {
