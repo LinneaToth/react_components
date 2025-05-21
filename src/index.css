@@ -25,6 +25,15 @@
 @layer base {
   body {
     font-family: rubik;
+    background-color: var(--color-main-bg);
   }
 
+}
+
+@media (min-width: 1850px) {
+  .center-on-wide {
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 7px 29px 0px;
+  }
 }
