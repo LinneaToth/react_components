@@ -6,7 +6,7 @@ import BottomText from "./BottomText.jsx";
 import NavContext from "../../contexts/NavContext.js";
 
 export default function Sidebar() {
-  const { isSmall, sidebarShow, setSidebarShow } = useContext(NavContext);
+  const { isSmall, sidebarShow } = useContext(NavContext);
 
   //Visible or not?
   const [isVisible, setVisible] = useState(false);

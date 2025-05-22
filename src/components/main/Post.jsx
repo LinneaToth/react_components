@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid"; //Generates random IDs
 
+//returns individual posts; heading, content, author and post tags
 export default function Post({ post }) {
   return (
     <article

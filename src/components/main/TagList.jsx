@@ -1,13 +1,13 @@
 import { v4 as uuidv4 } from "uuid";
 
 export default function TagList({ tags, setActiveTag, activeTag }) {
+  //counts the number of occurrences of a tag, how many posts have it?
   const countObject = {};
   tags.forEach((tag) => {
     countObject[tag] = (countObject[tag] || 0) + 1;
   });
 
-  const uniqueTags = [...new Set(tags)];
-  console.log(activeTag);
+  const uniqueTags = [...new Set(tags)]; //reduces the tags to unique ones
 
   return (
     <aside className="mr-10 mb-10 w-full lg:order-3 lg:w-1/5">
@@ -27,7 +27,6 @@ export default function TagList({ tags, setActiveTag, activeTag }) {
           onClick={() => {
             console.log("As per assignment instructions: Button clicked!");
             setActiveTag(tag);
-            console.log("tag:", tag, "active Tag:", activeTag);
           }}
         >
           {tag}{" "}

@@ -11,8 +11,7 @@ const sideButtons = [
 ];
 
 export default function SideNav() {
-  const { sidebarShow, setSidebarShow, isSmall, isVisible } =
-    useContext(NavContext);
+  const { sidebarShow, setSidebarShow } = useContext(NavContext);
 
   //Keeps track of the active buttons
   const [activeButton, setActiveButton] = useState("");

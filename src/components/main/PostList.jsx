@@ -1,9 +1,10 @@
 import Post from "./Post";
 import { postsData } from "../../assets/data/data";
 
-export default function Posts({ user, activeTag = null }) {
+//Maps out posts, determined by if a tag is active and which
+export default function Posts({ activeTag = null }) {
   return (
-    <section className="scrollbar-hidden order-last min-h-[60%] w-full overflow-scroll md:order-2 md:min-h-[85%] lg:w-2/3">
+    <section className="scrollbar-hidden order-last min-h-[60%] w-full overflow-scroll md:order-2 md:min-h-[93%] lg:w-2/3">
       {activeTag &&
         postsData
           .filter((p) => p.tags.includes(activeTag))

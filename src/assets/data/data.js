@@ -215,7 +215,5 @@ const postsData = [
     },
 ];
 
-const users = postsData.map((p) => p.author);
-console.log(users);
 
-export { postsData, users };
+export { postsData };
