@@ -1,5 +1,7 @@
 # React layout with post list
 
+![Preview of layout](preview.png)
+
 [Live Page](https://linneatoth.github.io/react_components/)
 
 A retro themed layout, built with React, styled with Tailwind and made with Vite. This was our second assignment using React in my current web development educatin. 
